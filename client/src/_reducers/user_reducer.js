@@ -1,5 +1,5 @@
-import { LOGIN_USER, REGISTER_USER } from "../_actions/types"
-
+import { AUTH_USER, LOGIN_USER, REGISTER_USER } from "../_actions/types"
+// eslint-disable-next-line
 export default function (state = {}, action) {
     switch (action.type) {
         case LOGIN_USER:
@@ -8,6 +8,10 @@ export default function (state = {}, action) {
 
         case REGISTER_USER:
             return { ...state, register: action.payload }
+            break
+
+        case AUTH_USER:
+            return { ...state, userData: action.payload }
             break
 
         default:
